@@ -13,7 +13,170 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="CREATEbutton">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>30</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create New Item</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DELETEbutton">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>430</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete Last Item</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="TYPEbox">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>110</y>
+      <width>101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>TITLE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>INTRODUCTION</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GRADE</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>COMMENT</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>110</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Type of Item</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>140</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Notes and hints for markor</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>290</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Text for markors and students</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="NOTEbox">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>170</y>
+      <width>181</width>
+      <height>91</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="TEXTbox">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>310</y>
+      <width>181</width>
+      <height>91</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="DisplayTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>571</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>571</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <column>
+     <property name="text">
+      <string>TYPE</string>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>NOTE</string>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TYPE</string>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -23,6 +186,12 @@
      <height>19</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMarking_system_for_organizers">
+    <property name="title">
+     <string>Marking system for organizers</string>
+    </property>
+   </widget>
+   <addaction name="menuMarking_system_for_organizers"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
