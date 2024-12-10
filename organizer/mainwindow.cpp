@@ -51,10 +51,20 @@ void MainWindow::on_CREATEbutton_clicked() {
     int cnt = 0;
     for (auto cur : ar) {
         string type =cur.TYPE;
+        string note =cur.NOTE;
+        string text =cur.TEXT;
         QString qtype = QString::fromStdString(type);
-        QTableWidgetItem *itm=new QTableWidgetItem();//创建一个Item
-        itm->setText(qtype);
-        ui->DisplayTable->setItem(cnt,0,itm);//把这个Item加到第一行第二列中
+        QString qnote = QString::fromStdString(note);
+        QString qtext = QString::fromStdString(text);
+        QTableWidgetItem *itmtype=new QTableWidgetItem();//创建一个Item
+        itmtype->setText(qtype);
+        ui->DisplayTable->setItem(cnt,0,itmtype);//把这个Item加到第一行第二列中
+        QTableWidgetItem *itmnote=new QTableWidgetItem();//创建一个Item
+        itmnote->setText(qnote);
+        ui->DisplayTable->setItem(cnt,1,itmnote);//把这个Item加到第一行第二列中
+        QTableWidgetItem *itmtext=new QTableWidgetItem();//创建一个Item
+        itmtext->setText(qtext);
+        ui->DisplayTable->setItem(cnt,2,itmtext);//把这个Item加到第一行第二列中
         ++cnt;
         // qDebug() << type <<"\n";
     }
@@ -65,9 +75,30 @@ void MainWindow::on_DELETEbutton_clicked()
     if(ar.empty()) return ;
     ar.pop_back();
     ui->DisplayTable->setRowCount(ar.size());
-    for (auto cur : ar) {
+    // for (auto cur : ar) {
+    //     string type =cur.TYPE;
+    //     qDebug() << type <<"\n";
+    // }
+}
+
+
+void MainWindow::on_SUBMITbutton_clicked()
+{
+    QFile file("output.toMark");
+    file.open(QIODevice::ReadWrite | QIODevice::Text);
+    for (auto cur:ar){
         string type =cur.TYPE;
-        qDebug() << type <<"\n";
+        string note =cur.NOTE;
+        string text =cur.TEXT;
+        QString qtype = QString::fromStdString(type);
+        QString qnote = QString::fromStdString(note);
+        QString qtext = QString::fromStdString(text);
+        QString str= "";
+        str = str + "TYPE: " + qtype ;
+        str = str + ", NOTE: \"" + qnote + "\"";
+        str = str + ", TEXT: \"" + qtext + "\"\n";
+        file.write(str.toUtf8());
     }
+    file.close();
 }
 

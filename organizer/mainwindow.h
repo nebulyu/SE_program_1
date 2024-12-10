@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <QFile>
 #include <vector>
 #include <string>
 
@@ -27,6 +28,8 @@ private slots:
     void on_CREATEbutton_clicked();
 
     void on_DELETEbutton_clicked();
+
+    void on_SUBMITbutton_clicked();
 
 private:
     Ui::MainWindow *ui;
