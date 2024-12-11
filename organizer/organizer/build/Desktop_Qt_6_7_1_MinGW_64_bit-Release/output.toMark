@@ -1,0 +1,8 @@
+TYPE: TITLE, NOTE: "Homework Grading", TEXT: "Grades"
+TYPE: TITLE, NOTE: "Section 1", TEXT: "Grades for Section 1"
+TYPE: TITLE, NOTE: "clarity", TEXT: "clarity for Section 1"
+TYPE: INTRODUCTION, NOTE: "Evaluate clarity", TEXT: "The clarity of homework"
+TYPE: GRADE, NOTE: "Grades clarity", TEXT: "Your score of clarity"
+TYPE: COMMENT, NOTE: "Comment clarity", TEXT: "Marker's comment on clarity"
+TYPE: COMMENT, NOTE: "Comment clarity improve", TEXT: "Advice on how to improve clarity"
+TYPE: TITLE, NOTE: "creativity", TEXT: "creativity for Section 1"
